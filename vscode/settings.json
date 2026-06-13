@@ -1,0 +1,117 @@
+{
+    /* ----------------
+        Latex Workshop 
+       ---------------- */
+    // ビルドのレシピ
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex",
+            "tools": [
+                // 2回ビルド
+                "lualatexmk",
+                "lualatexmk"
+            ]
+        }
+    ],
+    "latex-workshop.latex.outDir": "", // pdfを現在のディレクトリに出力
+    // recipesで指定したtoolsの中身
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatexmk",
+            "command": "lualatex",
+            "args": [
+                "--cmdx", // 日本語ファイル対応
+                "-file-line-error", // エラー行を表示
+                "-synctex=1", 
+                "-interaction=nonstopmode", 
+                "-halt-on-error",
+                "-output-directory=%OUTDIR%", // 出力ディレクトリ
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "-reuse-instance",
+        "-inverse-search",
+        "code.cmd -r -g \"%f:%l\"",
+        "%PDF%"
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt",  // ビルド時に不要ファイルを削除
+    // 不要ファイルリスト
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    "workbench.editor.enablePreview": false,
+    "editor.formatOnSave": true,
+    "[latex]": {
+        // 保存時に自動でフォーマットする
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を4にする
+        "editor.tabSize": 4
+    },
+    "latex-workshop.formatting.latex": "latexindent", // 追加
+    "latex-workshop.formatting.latexindent.path": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "%TMPFILE%",
+        "-c=%DIR%/",
+        "-y=defaultIndent: '%INDENT%'"
+    ],
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+    // タブでPDFビューアを開く
+    "latex-workshop.view.pdf.viewer": "tab",
+    // 保存したら自動でビルドする
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "editor.minimap.enabled": true,
+    "latex-workshop.latex.recipe.default": "lualatex",
+    /* -----------------
+        Jupyter Notebook 
+       ----------------- */
+    "notebook.output.scrolling": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "python.defaultInterpreterPath": "C:\\anaconda3\\python.exe",
+    "python.autoComplete.extraPaths": [],
+    "python.analysis.aiCodeActions": {
+        "implementAbstractClasses": true,
+        "generateSymbol": true,
+        "convertFormatString": true
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "latex-workshop.intellisense.biblatexJSON.replace": {}
+}
