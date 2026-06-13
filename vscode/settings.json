@@ -1,61 +1,37 @@
 {
-    // Latex Workshop
+    /* ----------------
+        Latex Workshop
+       ---------------- */
     "latex-workshop.latex.recipes": [
         {
-            "name": "lualatex",
+            "name": "latexmk",
             "tools": [
-                "lualatex" // "latex-workshop.latex.tools"で指定するtoolsを使う
-            ]
-        }
-    ],
+                "latexmk-lualatex"
+                ]
+                }
+            ],
     "latex-workshop.latex.tools": [
         {
-            "name": "lualatex", // 任意
-            "command": "lualatex", // エンジン指定
-            "args": [ // 実行オプション
-                "--cmdx", // 日本語ファイル名対応
-                "-file-line-error", // エラー箇所
-                "-synctex=1", 
-                "-interaction=nonstopmode", // コンパイル中のエラーでも続行
-                "-halt-on-error", // コンパイル中のエラーたら中止
-                "-output-directory=%OUTDIR%", // 出力先の指定
-                "%DOC%" // .texのパス
-            ],
-            "env": {}
+    "name": "latexmk-lualatex",
+    "command": "latexmk",
+    "args": [
+        "-lualatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+        ]
         }
-    ],
-    "latex-workshop.latex.outDir": "",  // 出力先の指定
-    "latex-workshop.latex.autoBuild.run": "onSave", // ビルドのタイミング
-//     "latex-workshop.latex.clean.fileTypes": [
-// 	"*.aux", 
-//     "*.bbl", 
-//     "*.blg", 
-//     "*.idx", 
-//     "*.ind", 
-//     "*.lof", 
-//     "*.lot", 
-//     "*.out", 
-//     "*.acn", 
-//     "*.acr", 
-//     "*.alg", 
-// 	"*.glg", 
-//     "*.glo", 
-//     "*.gls", 
-//     "*.ist", 
-//     "*.fls", 
-//     "*.log", 
-//     "*.fdb_latexmk", 
-// 	"_minted*", 
-//     "*.nav", 
-//     "*.snm", 
-//     "*.vrb"
-// ],
-//     "latex-workshop.latex.autoClean.run": "onBuilt", // 不要ファイル削除のタイミング
-    // Jupyter他
+        ],
+    "latex-workshop.latex.outDir": "",  
+    "latex-workshop.latex.autoBuild.run": "onSave", 
+    /* ---------------------
+        Jupyter Notebook 他
+       --------------------- */
     "notebook.output.scrolling": true,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
-    "python.defaultInterpreterPath": "C:\\anaconda3\\python.exe",
+    "python.defaultInterpreterPath": "C:/anaconda3/python.exe",
     "python.autoComplete.extraPaths": [],
     "python.analysis.aiCodeActions": {
         "implementAbstractClasses": true,
@@ -68,5 +44,6 @@
     "julia.symbolCacheDownload": true,
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "latex-workshop.intellisense.biblatexJSON.replace": {}
+    "latex-workshop.intellisense.biblatexJSON.replace": {},
+    "git.confirmSync": false
 }
