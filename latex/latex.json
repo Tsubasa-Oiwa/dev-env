@@ -151,5 +151,11 @@
 			"\\end{column}",
 			"\\end{columns}"
 		]
+	},
+	"argmaxmin": {
+		"prefix": "argm",
+		"body": [
+			"\\underset{} {\\operatorname{arg}}"
+		]
 	}
 }
