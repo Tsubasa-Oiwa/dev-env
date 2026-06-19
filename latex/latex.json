@@ -14,7 +14,6 @@
 			"\\theoremstyle{definition}",
 			"\\newtheorem*{dfn}{Definition} % 定義環境",
 			"% 数式フォント",
-			"\\usepackage[T1]{fontenc}",
 			"\\usepackage{newtxtext,newtxmath}",
 			"% itemizeの記号",
 			"\\usepackage{enumitem}",
