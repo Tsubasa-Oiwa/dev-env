@@ -4,7 +4,6 @@
        ---------------- */
     "editor.detectIndentation": true, // ファイルのインデントを自動判断
     "editor.insertSpaces": true, // Tab をスペースに変換
-    "editor.tabSize": 4, // 既定のインデント幅
     "editor.formatOnSave": true, // 保存時に自動整形
     "editor.formatOnPaste": true, // 貼り付け時のインデント調整
     /* ----------------
@@ -34,12 +33,14 @@
     "latex-workshop.latex.outDir": "",
     "latex-workshop.latex.autoBuild.run": "onSave",
     "[latex]": {
+        "editor.tabSize": 2,
         "editor.quickSuggestions": {
             "other": true,
             "comments": false,
             "strings": true
         }
     },
+    "latex-workshop.formatting.latex": "latexindent", // .texのコード整形
     /* ---------------------
         Jupyter Notebook 他
        --------------------- */
